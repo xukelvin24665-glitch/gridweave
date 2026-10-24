@@ -1,0 +1,44 @@
+test_holdout_uses_requested_seed (test_benchmark.EvidenceTests.test_holdout_uses_requested_seed) ... ok
+test_missing_or_single_sample_never_claims_zero_uncertainty (test_benchmark.EvidenceTests.test_missing_or_single_sample_never_claims_zero_uncertainty) ... ok
+test_small_sample_confidence_interval (test_benchmark.EvidenceTests.test_small_sample_confidence_interval) ... ok
+test_detects_tampered_schedule (test_scheduler.IndependentValidationTests.test_detects_tampered_schedule) ... ok
+test_bad_json_structure_is_user_error (test_scheduler.ModelTests.test_bad_json_structure_is_user_error) ... ok
+test_rejects_unphysical_inputs (test_scheduler.ModelTests.test_rejects_unphysical_inputs) ... ok
+test_round_trip_and_seed_reproducibility (test_scheduler.ModelTests.test_round_trip_and_seed_reproducibility) ... ok
+test_all_stress_conditions (test_scheduler.OptimizationTests.test_all_stress_conditions) ... ok
+test_battery_conservation_terminal_and_modes (test_scheduler.OptimizationTests.test_battery_conservation_terminal_and_modes) ... ok
+test_carbon_value_changes_decision (test_scheduler.OptimizationTests.test_carbon_value_changes_decision) ... ok
+test_frontier_monotonic_tradeoff (test_scheduler.OptimizationTests.test_frontier_monotonic_tradeoff) ... ok
+test_joint_capacity_infeasible_is_reported (test_scheduler.OptimizationTests.test_joint_capacity_infeasible_is_reported) ... ok
+test_known_cost_optimum (test_scheduler.OptimizationTests.test_known_cost_optimum) ... ok
+test_matches_exhaustive_tiny_enumeration (test_scheduler.OptimizationTests.test_matches_exhaustive_tiny_enumeration) ... ok
+test_no_battery_regression (test_scheduler.OptimizationTests.test_no_battery_regression) ... ok
+test_oracle_dominates_feasible_comparators (test_scheduler.OptimizationTests.test_oracle_dominates_feasible_comparators) ... ok
+test_release_and_exclusive_deadline (test_scheduler.OptimizationTests.test_release_and_exclusive_deadline) ... ok
+test_rolling_first_action_cannot_see_future_actuals (test_scheduler.OptimizationTests.test_rolling_first_action_cannot_see_future_actuals) ... ok
+test_subhourly_units (test_scheduler.OptimizationTests.test_subhourly_units) ... ok
+test_terminal_guard_covers_observed_grid_stress_regressions (test_scheduler.OptimizationTests.test_terminal_guard_covers_observed_grid_stress_regressions) ... ok
+test_unguarded_controller_failure_is_visible (test_scheduler.OptimizationTests.test_unguarded_controller_failure_is_visible) ... ok
+test_zero_workloads_and_zero_renewables (test_scheduler.OptimizationTests.test_zero_workloads_and_zero_renewables) ... ok
+test_custom_scenario_end_to_end (test_server.ServerTests.test_custom_scenario_end_to_end) ... ok
+test_health_and_assets (test_server.ServerTests.test_health_and_assets) ... ok
+test_invalid_query_and_traversal (test_server.ServerTests.test_invalid_query_and_traversal) ... 127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/experiment?seed=-1 HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/experiment?seed=3.5 HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/experiment?scenario=unknown HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/experiment?carbon_price=nan HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/experiment?battery=11 HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /../../pyproject.toml HTTP/1.1" 404 -
+ok
+test_rejects_malformed_and_cross_origin_writes (test_server.ServerTests.test_rejects_malformed_and_cross_origin_writes) ... 127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 400 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 415 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 403 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "POST /api/solve HTTP/1.1" 413 -
+127.0.0.1 - - [24/Oct/2026 22:20:57] "GET /api/health HTTP/1.1" 403 -
+ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 11.600s
+
+OK
