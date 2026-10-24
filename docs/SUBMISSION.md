@@ -1,8 +1,16 @@
 # GitHub submission guide
 
-The project is prepared as a local Git repository. The original contest tutorial says the final GitHub repository must be visible to judges; a local folder or private inaccessible repository will not meet that access expectation. No GitHub repository was created or published automatically.
+The project is published as a public GitHub repository at **https://github.com/xukelvin24665-glitch/gridweave**. The original contest tutorial requires the final repository to be visible to judges; verify access from a signed-out browser. The manual steps below are retained for reference and for rebuilding a repository from the committed Git bundle.
 
-## Publish the prepared repository
+## Publication record
+
+- Repository: https://github.com/xukelvin24665-glitch/gridweave
+- Visibility: public
+- Default branch: `main`
+- Verification workflow: `.github/workflows/checks.yml`
+- Published: 24 October 2026
+
+## Publishing steps
 
 1. Sign in to your team's GitHub account and create an empty repository named **gridweave**. Select public visibility when you are ready for judge access. Do not initialize a second README or license: both are already here.
 2. Open a terminal in this project folder. Set the team's identity for future commits, using the team's actual details:
@@ -10,7 +18,7 @@ The project is prepared as a local Git repository. The original contest tutorial
 ```bash
 git config user.name "YOUR TEAM NAME"
 git config user.email "YOUR ACTUAL GIT EMAIL"
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/gridweave.git
+git remote add origin https://github.com/xukelvin24665-glitch/gridweave.git
 git push -u origin main
 ```
 

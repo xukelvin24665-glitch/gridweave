@@ -1,6 +1,8 @@
 # GridWeave
 ### Smarter Compute. Cleaner Power.
 
+[![Verify GridWeave](https://github.com/xukelvin24665-glitch/gridweave/actions/workflows/checks.yml/badge.svg)](https://github.com/xukelvin24665-glitch/gridweave/actions/workflows/checks.yml)
+
 **A reproducible energy-and-compute scheduling lab for HackSHSID 2026, Track 2.** GridWeave jointly schedules flexible AI jobs, renewable consumption, grid imports, and battery storage while keeping inference reservations and job deadlines fixed.
 
 The project includes a working dashboard, a mixed-integer optimizer, a forecast-aware rolling controller, five policy comparisons, independent physical checks, and a committed 280-run experiment suite. It is a local research prototype: it simulates a data center rather than controlling live infrastructure. All demonstration inputs are synthetic.
@@ -104,6 +106,6 @@ The dashboard is served only on the local loopback address. Static assets have n
 
 ## GitHub submission
 
-This folder is a complete local Git repository on `main`. A GitHub remote is not required to run it. The contest tutorial says judges must eventually be able to view a public GitHub repository; publishing requires your GitHub destination. Follow the [submission guide](docs/SUBMISSION.md) to push the prepared repository and verify judge access.
+Published as a public repository: **[github.com/xukelvin24665-glitch/gridweave](https://github.com/xukelvin24665-glitch/gridweave)**. The full source, committed results, and documentation are available there. This folder remains a complete local Git repository on `main`, with `origin` pointing at the published repository; a GitHub remote is not required to run it. The contest tutorial requires judge-visible access, so verify the public page while signed out. The [submission guide](docs/SUBMISSION.md) records the publication and verification steps.
 
 **License:** MIT. Research references are credited in the documentation. Contest PDFs are not redistributed.

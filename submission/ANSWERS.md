@@ -32,7 +32,7 @@ All data is explicitly synthetic. This is a reproducible research prototype, not
 
 ## Public GitHub repository link
 
-Enter the actual public GitHub URL for this project. No public repository has been created in this session; a local folder or localhost dashboard URL does not satisfy this field. No URL is invented here.
+https://github.com/xukelvin24665-glitch/gridweave
 
 ## Testing evidence — text
 
