@@ -11,6 +11,9 @@ requires-python = ">=3.12"
 license = "MIT"
 dependencies = ["numpy>=2.2,<3", "scipy>=1.15,<2"]
 
+[project.optional-dependencies]
+submission = ["matplotlib==3.11.2", "Pillow==13.0.0"]
+
 [project.scripts]
 gridweave = "gridweave.cli:main"
 
