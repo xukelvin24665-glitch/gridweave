@@ -1,0 +1,26 @@
+{
+  "name": "deliberately_overloaded",
+  "seed": 0,
+  "price_usd_per_mwh": [100, 10, 100],
+  "carbon_kg_per_mwh": [400, 400, 400],
+  "renewable_mw": [0, 0, 0],
+  "renewable_forecast_mw": [0, 0, 0],
+  "inference_gpus": [0, 0, 0],
+  "jobs": [
+    {"id":"a", "name":"Job A", "release":0, "deadline":3, "work_gpu_h":4, "max_gpus":2},
+    {"id":"b", "name":"Job B", "release":0, "deadline":3, "work_gpu_h":4, "max_gpus":2}
+  ],
+  "facility": {
+    "total_gpus":2,
+    "idle_it_mw":0,
+    "mw_per_gpu":1,
+    "pue":1,
+    "grid_limit_mw":10,
+    "battery_mwh":0,
+    "battery_mw":0,
+    "peak_usd_per_mw_day":0
+  },
+  "slot_hours":1,
+  "description":"Each job is individually feasible, but 8 GPU-hours cannot fit into 6 GPU-hours of aggregate capacity. Expected solver infeasibility and exit code 2.",
+  "provenance":"Deliberately infeasible synthetic example, not a measured workload."
+}

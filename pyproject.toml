@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gridweave"
+version = "1.0.0"
+description = "Deadline-safe co-scheduling of AI compute, renewable power, and battery storage"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = ["numpy>=2.2,<3", "scipy>=1.15,<2"]
+
+[project.scripts]
+gridweave = "gridweave.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gridweave = ["web/*"]

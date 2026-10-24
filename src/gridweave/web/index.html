@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#163b2b">
+  <meta name="description" content="GridWeave scheduling lab: explore how flexible AI compute and battery storage can follow cleaner, cheaper power.">
+  <title>GridWeave · Energy & compute, in sync</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="GridWeave home"><span class="brand-mark" aria-hidden="true">▦</span>GridWeave<span class="brand-dot">.</span></a>
+    <div class="workspace-label">THE SCHEDULING LAB</div>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#overview" aria-current="page"><span aria-hidden="true">◫</span>Overview</a>
+      <a class="nav-link" href="#workloads"><span aria-hidden="true">▤</span>Workload planner</a>
+      <a class="nav-link" href="#experiments"><span aria-hidden="true">⌁</span>Experiments</a>
+      <a class="nav-link" href="#method"><span aria-hidden="true">◎</span>Model & evidence</a>
+    </nav>
+    <div class="sidebar-note"><span class="little-orbit" aria-hidden="true"></span><h3>Good timing.<br>Smaller footprint.</h3><p>Move the work that can wait.<br>Protect the work that can’t.</p></div>
+    <div class="sidebar-footer"><span class="status-dot"></span>LOCAL SIMULATION<span class="version">v1.0</span></div>
+  </aside>
+
+  <main>
+    <header class="topbar"><span>OPERATIONS <span class="slash">/</span> SCHEDULING LAB</span><span class="topbar-right"><span class="status-dot"></span>No cloud or API keys required</span></header>
+    <div class="content">
+      <section id="overview" class="overview">
+        <div class="heading-row"><div><div class="eyebrow">ENERGY & COMPUTE, IN SYNC</div><h1>A better time to compute<span>.</span></h1><p class="intro">Give flexible AI workloads a cleaner, cheaper window.</p></div><button id="export" class="button button-light" disabled><span aria-hidden="true">↓</span> Export results</button></div>
+
+        <form id="controls" class="control-panel">
+          <label class="scenario-control">Scenario<select id="scenario" aria-label="Scenario"><option value="balanced">Clear skies · balanced day</option><option value="cloudy">Cloudy day · low renewables</option><option value="price_spike">Evening price spike</option><option value="tight">Tight job deadlines</option><option value="forecast_shock">Unexpected solar shortfall</option><option value="grid_stress">Grid connection stress</option><option value="low_efficiency">Lower battery efficiency</option></select></label>
+          <label class="range-control"><span>Carbon value <output id="carbon-value" for="carbon">$80/t</output></span><input id="carbon" aria-label="Carbon value in USD per tonne" type="range" min="0" max="400" step="10" value="80"><span class="range-caption">Cost priority<span>Carbon priority</span></span></label>
+          <label class="range-control"><span>Battery capacity <output id="battery-value" for="battery">2.4 MWh</output></span><input id="battery" aria-label="Battery capacity in MWh" type="range" min="0" max="6" step="0.2" value="2.4"><span class="range-caption">No storage<span>6 MWh</span></span></label>
+          <label class="seed-control">Seed<input id="seed" type="number" min="0" max="4294967295" step="1" value="42" required></label>
+          <button id="run" class="button button-primary" type="submit"><span aria-hidden="true">↗</span> Run experiment</button>
+        </form>
+        <div class="context-row"><span><span class="synthetic-tag">SYNTHETIC DATA</span> <span id="context">24 hourly intervals · 1,024 GPUs · 16 reserved jobs</span></span><span id="run-status" role="status" aria-live="polite">Preparing your first experiment…</span></div>
+        <div id="error" class="error-message" role="alert" hidden></div>
+
+        <div class="metrics-grid" aria-label="Rolling forecast results">
+          <article class="metric-card"><div class="metric-title">Operating cost <span aria-hidden="true">↗</span></div><div class="metric-number" id="metric-cost">—</div><div class="metric-bottom"><span class="change" id="change-cost">Awaiting results</span><span>vs immediate</span></div><div class="metric-sub">Energy + battery wear + peak fee</div></article>
+          <article class="metric-card"><div class="metric-title">Grid emissions <span aria-hidden="true">♧</span></div><div class="metric-number" id="metric-carbon">—</div><div class="metric-bottom"><span class="change" id="change-carbon">Awaiting results</span><span>vs immediate</span></div><div class="metric-sub">Charging emissions included</div></article>
+          <article class="metric-card"><div class="metric-title">Jobs on time <span aria-hidden="true">◷</span></div><div class="metric-number" id="metric-service">—</div><div class="metric-bottom"><span class="service-label" id="service-label">Checking constraints</span></div><div class="metric-sub">Inference reservation stays fixed</div></article>
+          <article class="metric-card clean-card"><div class="metric-title">Renewable input share <span aria-hidden="true">☀</span></div><div class="metric-number" id="metric-clean">—</div><div class="metric-bottom"><span id="clean-detail">—</span></div><div class="metric-sub">Includes power sent to storage</div></article>
+        </div>
+
+        <div class="chart-layout">
+          <article class="card dispatch-card"><div class="card-header"><div><h2>The daily dispatch</h2><p>Rolling control · current supply observed, future supply forecast</p></div><div class="tab-group" role="group" aria-label="Chart view"><button type="button" class="chart-tab selected" data-chart="power" aria-pressed="true">Power</button><button type="button" class="chart-tab" data-chart="compute" aria-pressed="false">Compute</button><button type="button" class="chart-tab" data-chart="battery" aria-pressed="false">Battery</button></div></div><div id="chart-legend" class="legend"></div><div id="dispatch-chart" class="chart-placeholder" aria-label="Dispatch chart">Your schedule is being calculated.</div><p class="chart-footnote" id="chart-footnote">All times are relative to the start of this synthetic day.</p></article>
+          <article class="card insight-card"><div class="card-header"><div><div class="eyebrow">THE GRIDWEAVE EFFECT</div><h2>Work follows opportunity.</h2></div></div><div class="insight-visual" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbit-center">↗</span><span class="orbit-node node-one">☀</span><span class="orbit-node node-two">▦</span><span class="orbit-node node-three">ϟ</span></div><div id="insights" class="insights"><p>Finding the best windows for your workloads…</p></div><div class="small-note">A simulation result, not a forecast of real-world savings.</div></article>
+        </div>
+      </section>
+
+      <section id="workloads" class="card workload-card"><div class="card-header"><div><div class="section-kicker">01 / SERVICE FIRST</div><h2>Every workload has its window.</h2><p>Reserved jobs are divisible and preemptible. Release and deadline are hard boundaries.</p></div><span class="pill" id="jobs-pill">16 JOBS</span></div><div class="heatmap-scroll"><div id="heatmap" class="heatmap"></div></div><div class="heatmap-footer"><span><i class="heat-key low"></i> Lower allocation <i class="heat-key high"></i> Higher allocation <i class="deadline-key"></i> Deadline</span><span>Color = share of a job’s maximum GPUs</span></div></section>
+
+      <section id="experiments"><div class="section-heading"><div><div class="section-kicker">02 / MAKE THE COMPARISON</div><h2>Where the improvement comes from.</h2><p>Identical jobs and power limits. Different scheduling decisions.</p></div><span class="pill">5 POLICIES · SAME INPUTS</span></div><div class="card comparison-card"><div class="table-scroll"><table><caption class="sr-only">Policy comparison on the current synthetic scenario</caption><thead><tr><th>Scheduling strategy</th><th>Operating cost</th><th>Grid emissions</th><th>On-time jobs</th><th>Model gap</th></tr></thead><tbody id="comparison-body"></tbody></table></div><p class="table-note">Ablations isolate each lever. Battery-only and compute-only use perfect forecasts. The oracle is the best joint schedule for the modeled, realized day.</p></div>
+        <div class="evidence-layout"><article class="card frontier-card"><div class="card-header"><div><h2>Cheaper or cleaner?</h2><p>Explore the trade-off by changing the value placed on a tonne of CO₂.</p></div><button id="frontier-run" class="button button-light" disabled>Trace the frontier ↗</button></div><div id="frontier-chart" class="frontier-empty"><span class="frontier-symbol" aria-hidden="true">⌁</span><p>Six carbon values. One set of physical constraints.<br>Trace the perfect-forecast trade-off for this scenario.</p></div></article><article class="card certificate-card"><div class="section-kicker">CHECK THE CLAIM</div><h2>A result you can inspect.</h2><dl id="certificate"></dl><p>Solver bounds apply to the perfect-forecast model. Rolling control has forecast regret, not a global optimality certificate.</p></article></div>
+      </section>
+
+      <section id="method" class="method-section"><div class="section-heading"><div><div class="section-kicker">03 / EVIDENCE, WITH LIMITS</div><h2>Built to explain the “why”.</h2><p>A transparent model, reproducible seeds, and visible failure cases.</p></div><span class="pill">HACKSHSID 2026 · TRACK 2</span></div><div class="method-grid"><article class="card"><span class="method-number">01</span><h3>Protect service</h3><p>Keep online inference in its original hour. Finish every reserved job within its window, without exceeding GPU or grid capacity.</p></article><article class="card"><span class="method-number">02</span><h3>Schedule together</h3><p>Minimize energy cost, battery wear, peak fees, and a chosen carbon value. Charging and discharging cannot happen together.</p></article><article class="card"><span class="method-number">03</span><h3>Replan each hour</h3><p>Observe current supply, solve again, and conservatively assume no future renewables in the final four hours. Restore the battery’s initial energy by day’s end.</p></article></div><div class="assumptions"><strong>Where this model stops</strong><p>Hourly intervals and fluid GPU equivalents do not model millisecond latency, GPU topology, checkpoint overhead, or thermal transients. All job reservations and inference demand are known. The closing-hours guard reduces terminal risk but cannot guarantee feasibility under arbitrary forecast errors. Renewable, battery, and server capital costs are excluded. Grid intensity is an accounting signal, not a causal emissions estimate. Synthetic experiments demonstrate model behavior; deployment needs real traces and validation.</p></div><div id="benchmark-evidence" class="benchmark-evidence"></div></section>
+      <footer class="page-footer"><span class="footer-brand">GridWeave<span>.</span></span><span>Smarter compute. Cleaner power.</span><span>Reproducible by design · Made for HackSHSID 2026</span></footer>
+    </div>
+  </main>
+</body>
+</html>

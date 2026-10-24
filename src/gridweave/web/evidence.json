@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "seed_range": [
+    0,
+    19
+  ],
+  "carbon_price_usd_per_tonne": 80.0,
+  "summaries": {
+    "balanced": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 39.80076613273869,
+        "ci95_low": 38.429765980713206,
+        "ci95_high": 41.17176628476417
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 26.568919195616694,
+        "ci95_low": 25.234163715827812,
+        "ci95_high": 27.903674675405576
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 1.559854274644672,
+        "ci95_low": 1.094926135639104,
+        "ci95_high": 2.02478241365024
+      },
+      "max_milp_gap": 6.404907496225341e-10,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 618.4674294410717,
+          "mean_carbon_kg": 3882.9469594834613
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 380.4324904257706,
+          "mean_carbon_kg": 2997.313831492368
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 525.6841843231609,
+          "mean_carbon_kg": 3254.8726604433978
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 364.9543009292111,
+          "mean_carbon_kg": 2824.436376153223
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 372.0690510857469,
+          "mean_carbon_kg": 2850.6494450909477
+        }
+      }
+    },
+    "cloudy": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 17.777367861409136,
+        "ci95_low": 17.462467855233818,
+        "ci95_high": 18.092267867584454
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 4.18984378835845,
+        "ci95_low": 3.9057338053080497,
+        "ci95_high": 4.47395377140885
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 0.4178852756814211,
+        "ci95_low": 0.33391156662117943,
+        "ci95_high": 0.5018589847416628
+      },
+      "max_milp_gap": 3.120940967647241e-16,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 1146.2675427901095,
+          "mean_carbon_kg": 6409.028957537174
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 962.7714126452341,
+          "mean_carbon_kg": 6230.207833801909
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 1116.6926825492005,
+          "mean_carbon_kg": 6323.285284610277
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 936.4026429605541,
+          "mean_carbon_kg": 6142.587919406275
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 942.5387580506291,
+          "mean_carbon_kg": 6140.412634867165
+        }
+      }
+    },
+    "price_spike": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 71.97575761462545,
+        "ci95_low": 71.33105798157486,
+        "ci95_high": 72.62045724767604
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 26.61491483300748,
+        "ci95_low": 25.264921737040282,
+        "ci95_high": 27.964907928974675
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 1.4810775274460064,
+        "ci95_low": 1.0399814554372422,
+        "ci95_high": 1.9221735994547706
+      },
+      "max_milp_gap": 6.404907496225341e-10,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 1327.1495972109342,
+          "mean_carbon_kg": 3882.9469594834613
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 380.4324904257706,
+          "mean_carbon_kg": 2997.313831492368
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 1234.3698191933954,
+          "mean_carbon_kg": 3254.8533689278793
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 364.9543009292111,
+          "mean_carbon_kg": 2824.436376153223
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 371.7650140212634,
+          "mean_carbon_kg": 2848.8775599725054
+        }
+      }
+    },
+    "tight": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 39.68103871033064,
+        "ci95_low": 38.540865830674676,
+        "ci95_high": 40.8212115899866
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 23.805440956815445,
+        "ci95_low": 22.55749604933165,
+        "ci95_high": 25.05338586429924
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 1.6674708001761773,
+        "ci95_low": 1.1712409413775149,
+        "ci95_high": 2.16370065897484
+      },
+      "max_milp_gap": 6.404907496225341e-10,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 618.4667533913769,
+          "mean_carbon_kg": 3882.956845932086
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 380.4318143760758,
+          "mean_carbon_kg": 2997.323717940992
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 565.1647029968109,
+          "mean_carbon_kg": 3618.783634672076
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 363.89964480624974,
+          "mean_carbon_kg": 2945.4633840091483
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 372.82164025993984,
+          "mean_carbon_kg": 2958.088759708036
+        }
+      }
+    },
+    "forecast_shock": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 15.61905789224976,
+        "ci95_low": 14.815600080420458,
+        "ci95_high": 16.422515704079064
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 9.308757226392995,
+        "ci95_low": 8.703484792565087,
+        "ci95_high": 9.914029660220903
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 2.6369326529049077,
+        "ci95_low": 2.437068480155337,
+        "ci95_high": 2.8367968256544787
+      },
+      "max_milp_gap": 1.1539422231978886e-16,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 797.6944665847273,
+          "mean_carbon_kg": 4812.0868271611125
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 653.3947528825898,
+          "mean_carbon_kg": 4550.093707901695
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 770.6270696753658,
+          "mean_carbon_kg": 4627.315899510716
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 639.5185315382378,
+          "mean_carbon_kg": 4454.7513922858525
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 672.9736987251008,
+          "mean_carbon_kg": 4364.142749577966
+        }
+      }
+    },
+    "grid_stress": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 31.150637872504213,
+        "ci95_low": 29.878190914476985,
+        "ci95_high": 32.42308483053144
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 16.599679760986557,
+        "ci95_low": 15.386801301150019,
+        "ci95_high": 17.812558220823096
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 2.791178123827034,
+        "ci95_low": 2.138027863707071,
+        "ci95_high": 3.444328383946997
+      },
+      "max_milp_gap": 1.4509620934829006e-16,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 743.0431687774264,
+          "mean_carbon_kg": 4481.907356384381
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 510.6039190510179,
+          "mean_carbon_kg": 3788.8213180813887
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 678.1612562190944,
+          "mean_carbon_kg": 4145.109528649554
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 490.8931839348813,
+          "mean_carbon_kg": 3719.3711979029417
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 511.41158106708014,
+          "mean_carbon_kg": 3737.490119663919
+        }
+      }
+    },
+    "low_efficiency": {
+      "attempted_seeds": 20,
+      "cost_savings_pct": {
+        "n": 20,
+        "mean": 36.264713150784466,
+        "ci95_low": 34.88413132550369,
+        "ci95_high": 37.645294976065244
+      },
+      "carbon_savings_pct": {
+        "n": 20,
+        "mean": 23.517002939833965,
+        "ci95_low": 22.230632574253818,
+        "ci95_high": 24.803373305414112
+      },
+      "rolling_regret_pct": {
+        "n": 20,
+        "mean": 1.6702284456787309,
+        "ci95_low": 1.2817747005479494,
+        "ci95_high": 2.0586821908095123
+      },
+      "max_milp_gap": 1.6872091988785695e-16,
+      "failures": [],
+      "policies": {
+        "immediate_edf": {
+          "feasible_count": 20,
+          "mean_cost_usd": 618.4674294410717,
+          "mean_carbon_kg": 3882.9469594834613
+        },
+        "battery_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 406.163272854164,
+          "mean_carbon_kg": 3139.5902712232983
+        },
+        "compute_only": {
+          "feasible_count": 20,
+          "mean_cost_usd": 525.6841843231609,
+          "mean_carbon_kg": 3254.8726604433978
+        },
+        "joint_oracle": {
+          "feasible_count": 20,
+          "mean_cost_usd": 386.2406998627466,
+          "mean_carbon_kg": 2935.682706744982
+        },
+        "rolling_mpc": {
+          "feasible_count": 20,
+          "mean_cost_usd": 393.93844037646977,
+          "mean_carbon_kg": 2969.183674811836
+        }
+      }
+    }
+  },
+  "interpretation": "Paired percentages compare rolling control with immediate EDF on identical inputs. Student-t 95% confidence intervals describe synthetic seed variability, not uncertainty about real deployments. Failed comparisons are counted and listed; they are not silently assigned savings."
+}
